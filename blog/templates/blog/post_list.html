@@ -7,16 +7,13 @@
                 <h1><a href="">Django Kikazo and Iza Blog</a></h1>
             </div>
 
+	{% for post in posts %}
             <div>
-                <p>published: 25.06.2018, 14:17</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Holi que onda jajajajaja. Te Amo !!!!!!!!!</p>
+	    	<p>published: {{ post.published_date }}</p>
+            	<h1><a href="">{{ post.title }}</a></h1>
+            	<p>{{ post.text|linebreaksbr }}</p>
             </div>
+	{% endfor %}
 
-            <div>
-                <p>published: 25.06.2018, 14:20</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Ah JiJO !!!!!.</p>
-            </div>
         </body>
     </html>
